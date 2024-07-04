@@ -1,0 +1,25 @@
+#include<iostream>
+using namespace std;
+int main()
+{
+	int n1,n2,n3;
+	cout<<"enter the first number:\n";
+	cin>>n1;
+	cout<<"enter the second number:\n";
+	cin>>n2;
+	cout<<"enter the third number:\n";
+	cin>>n3;
+	int max;
+	 max=(n1>n2 )?((n1>n3)? n1:n3): ((n2>n3)? n2:n3);
+	cout<<"maximum of three numbers="<<max;
+	return 0;
+}
+
+OUTPUT:
+enter the first number:
+3
+enter the second number:
+4
+enter the third number:
+2
+maximum of three numbers=4
