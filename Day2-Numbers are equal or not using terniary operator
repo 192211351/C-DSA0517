@@ -1,0 +1,20 @@
+#include<iostream>
+using namespace std;
+int main()
+{
+	int n1,n2;
+	cout<<"enter the first number:"<<endl;
+	cin>>n1;
+	cout<<"enter the second number:"<<endl;
+	cin>>n2;
+	string condition;
+	condition=(n1==n2)?"numbers are equal": "numbers are not equal";
+	//cout<<condition;
+	return 0;
+}
+OUTPUT:
+enter the first number:
+3
+enter the second number:
+3
+numbers are equal
