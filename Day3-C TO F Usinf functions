@@ -1,0 +1,19 @@
+#include<iostream>
+using namespace std;
+int convert(float c)
+{
+	double f=(9/5)*c+32;
+	return f;
+};
+int main()
+{
+	float c;
+	cout<<"enter the celisus:"<<endl;
+	cin>>c;
+	cout<<"faherenheit"<<convert(c);
+}
+
+OUTPUT:
+enter the celisus:
+33
+faherenheit65
