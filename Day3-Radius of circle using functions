@@ -1,0 +1,19 @@
+#include<iostream>
+using namespace std;
+int area(int r)
+{
+	int x=3.14*r*r;
+	return x;
+};
+int main()
+{
+	int r;
+	cout<<"enter the radius:"<<endl;
+	cin>>r;
+	cout<<"radius of circle="<<area(r);
+	return 0;
+}
+OUTPUT:
+enter the radius:
+4
+radius of circle=50
