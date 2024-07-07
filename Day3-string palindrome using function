@@ -1,0 +1,25 @@
+#include<iostream>
+#include<cstring>
+using namespace std;
+const char* pal(const char s[])
+{
+	int length=strlen(s);
+	int i;
+	for(i=0;i<length/2;i++)
+	{
+		if(s[i]!=s[length-i-1])
+		{
+			return "is not a palindrome";
+		}
+	}
+	return "is a palindrome";
+};
+int main()
+{
+	char s[20]="malayalam";
+	cout<<s<<pal(s)<<endl;
+	return 0;
+}
+
+OUTPUT:
+malayalamis a palindrome
