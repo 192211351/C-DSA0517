@@ -1,0 +1,18 @@
+#include<iostream>
+using namespace std;
+#include<string>
+void display()
+{
+	string a="supriya";
+	int b;
+	 b=a.length();
+	cout<<b;
+};
+int main()
+{
+	display();
+	return 0;
+}
+
+OUTPUT:
+7
