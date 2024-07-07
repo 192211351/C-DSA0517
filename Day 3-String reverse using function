@@ -1,0 +1,22 @@
+#include<iostream>
+#include<algorithm>
+#include<string>
+using namespace std;
+void reversed()
+{
+	string str,a;
+	cout<<"enter the string:"<<endl;
+	cin>>str;
+	reverse(str.begin(), str.end());
+	cout<<str;
+};
+int main()
+{
+	reversed();
+	return 0;
+}
+
+OUTPUT:
+enter the string:
+supriya
+ayirpus
