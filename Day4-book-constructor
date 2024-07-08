@@ -1,0 +1,25 @@
+#include<iostream>
+#include<string>
+using namespace std;
+class book
+{
+	public:
+		string name;
+		string author;
+		int year;
+		book(string x,string y,int z)
+		{
+			name=x;
+			author=y;
+			year=z;
+		}
+};
+int main()
+{
+	book Bookobj1("poor and rich dad","henris",2004);
+	cout<<Bookobj1.name<<" "<<Bookobj1.author<<" "<<Bookobj1.year<<endl;
+	return 0;
+}
+
+OUTPUT:
+poor and rich dad henris 2004
