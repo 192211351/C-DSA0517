@@ -1,0 +1,27 @@
+#include<iostream>
+using namespace std;
+class rectangle
+{
+	private:
+		int l,b;
+		public:
+			void input(int len,int bre)
+			{
+				l=len;
+				b=bre;
+			}
+			int area()
+			{
+				return l*b;
+			}
+};
+int main()
+{
+	rectangle r1;
+	r1.input(10,9);
+	cout<<r1.area();
+	return 0;
+}
+
+OUTPUT:
+90
