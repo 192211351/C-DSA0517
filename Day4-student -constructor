@@ -1,0 +1,26 @@
+#include<iostream>
+#include<string>
+using namespace std;
+class student
+{
+	public:
+		string name;
+		string sub;
+		string branch;
+		int year;
+		student(string x,string y,string z,int b)
+		{
+			name=x;
+			sub=y;
+			branch=z;
+			year=b;
+		}
+};
+int main()
+{
+	student details1("supriya","c++","cse",3);
+	cout<<details1.name<<" "<<details1.sub<<" "<<details1.branch<<" "<<details1.year<<endl;
+}
+
+OUTPUT:
+supriya c++ cse 3
