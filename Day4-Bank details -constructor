@@ -1,0 +1,26 @@
+#include<iostream>
+using namespace std;
+class bank
+{
+	public:
+		string bankname,accountholdername;
+		int banknumber;
+		bank(string x,string y,int z)
+		{
+			bankname=x;
+			accountholdername=y;
+			banknumber=z;
+		}
+};
+int main()
+{
+	bank Bankobj1("ap","ns",101);
+	bank Bankobj2("ds","ps",101);
+	cout<<Bankobj1.bankname<<Bankobj1.accountholdername<<Bankobj1.banknumber<<endl;
+	cout<<Bankobj2.bankname<<Bankobj2.accountholdername<<Bankobj2.banknumber<<endl;
+	return 0;
+}
+
+OUTPUT:
+apns101
+dsps101
