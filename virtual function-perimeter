@@ -1,0 +1,66 @@
+#include <iostream>
+#include <cmath> 
+
+using namespace std;
+class Shape {
+public:
+    virtual float area() = 0; 
+    virtual float perimeter() = 0; 
+};
+class Rectangle : public Shape {
+private:
+    float length;
+    float width;
+
+public:
+    Rectangle(float l, float w) : length(l), width(w) {}
+
+    float area() override {
+        return length * width;
+    }
+
+    float perimeter() override {
+        return 2 * (length + width);
+    }
+};
+class Triangle : public Shape {
+private:
+    float side1;
+    float side2;
+    float side3;
+
+public:
+    Triangle(float s1, float s2, float s3) : side1(s1), side2(s2), side3(s3) {}
+
+    float area() override {
+        // Using Heron's formula to calculate area of triangle
+        float s = (side1 + side2 + side3) / 2;
+        return sqrt(s * (s - side1) * (s - side2) * (s - side3));
+    }
+
+    float perimeter() override {
+        return side1 + side2 + side3;
+    }
+};
+
+int main() {
+    Rectangle rect(5.0, 3.0);
+    Triangle tri(3.0, 4.0, 5.0);
+    cout << "Rectangle:" << endl;
+    cout << "Area: " << rect.area() << endl;
+    cout << "Perimeter: " << rect.perimeter() << endl;
+    cout << "\nTriangle:" << endl;
+    cout << "Area: " << tri.area() << endl;
+    cout << "Perimeter: " << tri.perimeter() << endl;
+
+    return 0;
+}
+
+  OUTPUT:
+  Rectangle:
+Area: 15
+Perimeter: 16
+
+Triangle:
+Area: 6
+Perimeter: 12
