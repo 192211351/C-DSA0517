@@ -1,0 +1,37 @@
+#include <iostream>
+class Animal {
+public:
+    virtual void speak() {
+        std::cout << "Animal is speaking." << std::endl;
+    }
+};
+class dog : public Animal {
+public:
+    void speak() override {
+        std::cout << "dog speaks." << std::endl;
+    }
+};
+class cat : public Animal {
+public:
+    void speak() override {
+        std::cout << "cat speaks" << std::endl;
+    }
+};
+
+int main() {
+    Animal *animal1 = new dog();
+    Animal *animal2 = new cat();
+
+    
+    animal1->speak(); 
+    animal2->speak(); 
+
+    delete animal1;
+    delete animal2;
+
+    return 0;
+}
+
+  OUTPUT:
+  dog speaks.
+cat speaks
