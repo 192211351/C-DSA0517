@@ -1,0 +1,35 @@
+#include <iostream>
+#include <stdexcept>
+
+void innerFunction() {
+    try {
+        std::cout << "Inner try block: throwing an exception." << std::endl;
+        throw std::runtime_error("Error from innerFunction");
+    } catch (const std::runtime_error& e) {
+        std::cerr << "Caught exception in innerFunction: " << e.what() << std::endl;
+        throw;  
+    }
+}
+
+void outerFunction() {
+    try {
+        innerFunction();
+    } catch (const std::runtime_error& e) {
+        std::cerr << "Caught exception in outerFunction: " << e.what() << std::endl;
+    }
+}
+
+int main() {
+    try {
+        outerFunction();
+    } catch (const std::exception& e) {
+        std::cerr << "Caught exception in main: " << e.what() << std::endl;
+    }
+
+    return 0;
+}
+
+OUTPUT:
+Inner try block: throwing an exception.
+Caught exception in innerFunction: Error from innerFunction
+Caught exception in outerFunction: Error from innerFunction
