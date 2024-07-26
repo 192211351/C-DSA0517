@@ -1,0 +1,32 @@
+#include <iostream>
+#include <stdexcept>
+#include <string>
+class MyCustomException : public std::runtime_error {
+public:
+    MyCustomException(const std::string& message) 
+        : std::runtime_error(message) {}
+};
+
+void riskyFunction() {
+    std::cout << "Executing risky function." << std::endl;
+    throw MyCustomException("Something went wrong in riskyFunction");
+}
+
+int main() {
+    try {
+        riskyFunction();
+    } catch (const MyCustomException& e) {
+        std::cerr << "Caught custom exception: " << e.what() << std::endl;
+    } catch (const std::exception& e) {
+        std::cerr << "Caught standard exception: " << e.what() << std::endl;
+    } catch (...) {
+        std::cerr << "Caught unknown exception." << std::endl;
+    }
+
+    return 0;
+}
+
+
+OUTPUT:
+Executing risky function.
+Caught custom exception: Something went wrong in riskyFunction
