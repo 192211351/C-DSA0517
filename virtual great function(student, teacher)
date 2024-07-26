@@ -1,0 +1,37 @@
+#include <iostream>
+#include <string>
+
+using namespace std;
+class Person {
+public:
+    virtual void greet() {
+        cout << "Hello, I am a Person." << endl;
+    }
+};
+class Student : public Person {
+public:
+    void greet() override {
+        cout << "Hello, I am a Student." << endl;
+    }
+};
+class Teacher : public Person {
+public:
+    void greet() override {
+        cout << "Hello, I am a Teacher." << endl;
+    }
+};
+int main() {
+    Student student;
+    Teacher teacher;
+    cout << "Student says: ";
+    student.greet(); 
+
+    cout << "Teacher says: ";
+    teacher.greet();  
+
+    return 0;
+}
+
+  OUTPUT:
+  Student says: Hello, I am a Student.
+Teacher says: Hello, I am a Teacher.
