@@ -1,0 +1,51 @@
+#include <iostream>
+#include <string>
+class Employee {
+protected:
+    std::string name;
+    double baseSalary;
+
+public:
+    Employee(const std::string& n, double salary)
+        : name(n), baseSalary(salary) {}
+    virtual double calculatePay() const {
+        return baseSalary; 
+    }
+    virtual ~Employee() {}
+};
+class Manager : public Employee {
+private:
+    double bonus; 
+
+public:
+    Manager(const std::string& n, double salary, double b)
+        : Employee(n, salary), bonus(b) {}
+    double calculatePay() const override {
+        return baseSalary + bonus;
+    }
+};
+class Engineer : public Employee {
+private:
+    double overtimePay; 
+
+public:
+    Engineer(const std::string& n, double salary, double overtime)
+        : Employee(n, salary), overtimePay(overtime) {}
+
+    double calculatePay() const override {
+        return baseSalary + overtimePay;
+    }
+};
+int main() {
+    Manager manager("Alice", 5000.0, 1000.0);
+    Engineer engineer("Bob", 4000.0, 500.0);
+
+    std::cout << "Manager " << manager.calculatePay() << " USD\n";
+    std::cout << "Engineer " << engineer.calculatePay() << " USD\n";
+
+    return 0;
+}
+
+  OUTPUT:
+  Manager 6000 USD
+Engineer 4500 USD
